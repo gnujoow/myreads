@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "semi": ["error", "always"],
+    "camelcase": ["error"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }]
+  }
+}
