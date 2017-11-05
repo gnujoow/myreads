@@ -28,7 +28,7 @@ const Book = (props) => {
         </div>
       </div>
       <div className="book-title">{props.info.title}</div>
-      <div className="book-authors">{props.info.authors}</div>
+      <div className="book-authors">{props.info.authors && props.info.authors.join(', ')}</div>
     </div>
   );
 };

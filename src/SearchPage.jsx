@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import BooksGrid from './BooksGrid';
 import { getAll, search, update } from './BooksAPI';
 
+import { Throttle } from 'react-throttle';
+
+
 class SearchPage extends Component {
   state = {
     books: [],
@@ -65,11 +68,13 @@ class SearchPage extends Component {
             Close
           </Link>
           <div className="search-books-input-wrapper">
-            <input
-              type="text"
-              placeholder="Search by title or author"
-              onChange={this.handleChangeInput}
-            />
+            <Throttle time="200" handler="onChange">
+              <input
+                type="text"
+                placeholder="Search by title or author"
+                onChange={this.handleChangeInput}
+              />
+            </Throttle>
           </div>
         </div>
         {this.state.searchedBooks ? (
